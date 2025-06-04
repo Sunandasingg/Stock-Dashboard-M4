@@ -1,4 +1,4 @@
-const API_KEY = '5TE42C1IZSY6UZ4F';
+const API_KEY = 'UBKFXWFQKJ210F3A'; //   5TE42C1IZSY6UZ4F
 let chart;
 
 async function loadStockData() {
