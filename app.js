@@ -1,13 +1,13 @@
-const API_KEY = 'UBKFXWFQKJ210F3A'; //   5TE42C1IZSY6UZ4F
+const API_KEY = 'YBMY9VR64H7MAMNH'; //    UBKFXWFQKJ210F3A
 let chart;
 
 async function loadStockData() {
     const symbol = document.getElementById('stock-select').value;
-    const url = `https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=IBM&interval=5min&apikey=${API_KEY}`;
+    const url = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${symbol}&apikey=${API_KEY}`;
 
     try {
         const res = await fetch(url);
-        const data = await res.json();
+        const data = await res.json(); 
         const timeSeries = data["Time Series (Daily)"];
 
         if (!timeSeries) {
@@ -39,8 +39,8 @@ function renderChart(labels, data, symbol) {
                 data,
                 borderColor: 'rgba(59, 130, 246, 1)',
                 backgroundColor: 'rgba(59, 130, 246, 0.2)',
-                tension: 0.4,
-                fill: true
+                tension: 0.1,
+                fill: false
             }]
         },
         options: {
